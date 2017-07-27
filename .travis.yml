@@ -9,4 +9,4 @@ script:
 
 after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD2"
-  - docker push hylke1982/openjdk-download-and-run
+  - docker push $DOCKER_USERNAME/openjdk-download-and-run
