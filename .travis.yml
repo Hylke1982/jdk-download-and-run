@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t $DOCKER_USERNAME/openjdk-download-and-run .
+
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD2"
+  - docker push hylke1982/openjdk-download-and-run
